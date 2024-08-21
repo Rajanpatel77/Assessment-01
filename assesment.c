@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+//reverse sring 
 void rev(char s[]) {
     int i, len = strlen(s);
     printf("\nReversed string: ");
@@ -10,11 +11,13 @@ void rev(char s[]) {
     printf("\n");
 }
 
+//concat two string 
 void concat(char s1[], char s2[]) {
     strcat(s1, s2);
     printf("\nConcatenated string: %s", s1);
 }
 
+//check string is palindrome 
 void palin(char s[]) {
     int i, len = strlen(s), flag = 1;
     for (i = 0; i < len / 2; i++) {
@@ -29,15 +32,18 @@ void palin(char s[]) {
         printf("\nThe string is not palindrome");
 }
 
+//copy one string to another sting
 void copy(char s1[], char s2[]) {
     strcpy(s2, s1);
     printf("\nCopied string: %s", s2);
 }
 
+//cal length of string
 void len_str(char s[]) {
     printf("\nLength of string: %d", strlen(s));
 }
 
+//cal frequency of each char in string
 void freq(char s[]) {
     int i, f[256] = {0};
     printf("\nCharacter frequencies: ");
@@ -51,12 +57,14 @@ void freq(char s[]) {
             printf("%c: %d\n", i, f[i]);
     }
 }
-
+//main fun for perform program
 void main() {
     char str1[100], str2[100];
     int ch, cont = 1;
     
     while (cont) {
+
+        //menu display
         printf("\nChoose operation:\n");
         printf("1. Reverse\n2. Concatenate\n3. Palindrome\n4. Copy\n5. Length\n6. Frequency");
         printf("Enter your choice: ");
@@ -64,7 +72,8 @@ void main() {
         
         printf("Enter a string: ");
         scanf("%s", str1);
-        
+
+        //choose operation from user
         switch (ch) {
         case 1:
             rev(str1);
@@ -89,7 +98,8 @@ void main() {
         default:
             printf("\nInvalid choice, try again");
         }
-        
+
+        //continue or exit
         printf("\ncontinue or exit? (1-Yes, 0-No): ");
         scanf("%d", &cont);
     }
